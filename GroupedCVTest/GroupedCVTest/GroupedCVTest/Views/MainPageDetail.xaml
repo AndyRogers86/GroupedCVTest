@@ -23,9 +23,6 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="25"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
 
                             <Label x:Name="lblCal" Grid.Column="0" Grid.Row="1" Text="{Binding ItemText}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Aqua"></Label>
                         </Grid>
