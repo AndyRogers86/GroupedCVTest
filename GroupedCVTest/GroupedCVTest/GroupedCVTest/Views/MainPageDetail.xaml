@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GroupedCVTest.Views.MainPageDetail"
+             Title="Detail">
+    <ContentPage.Content>
+        <ScrollView>
+            <CollectionView x:Name="cv" ItemsSource="{Binding Items}" SelectionMode="Single" IsGrouped="True">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <BoxView Color="Red" HeightRequest="3" HorizontalOptions="Fill" />
+                            <Label Text="{Binding Name}" Margin="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="Fill" HorizontalOptions="Fill" FontSize="Large" FontAttributes="Italic" BackgroundColor="Orange"></Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="grdWatchDial" Padding="0" ColumnSpacing="0" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label x:Name="lblCal" Grid.Column="0" Grid.Row="1" Text="{Binding ItemText}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Aqua"></Label>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <Label Text="Nothing bound." Margin="20" HorizontalOptions="CenterAndExpand"></Label>
+                    </StackLayout>
+                </CollectionView.EmptyView>
+                <CollectionView.GroupFooterTemplate>
+                    <DataTemplate>
+                        <BoxView Color="Green" HeightRequest="3" HorizontalOptions="Fill" />
+                    </DataTemplate>
+                </CollectionView.GroupFooterTemplate>
+            </CollectionView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
